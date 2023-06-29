@@ -16,7 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('principal');
 });
-
-Route::get('/store', function () {
-    return view('store');
-});
