@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('title')
-    Principal Website page
+    Principal webpage Virtual Store
 @endsection
+
 @section('content')
-    Website content test
+    Here we sell humans organs
 @endsection
