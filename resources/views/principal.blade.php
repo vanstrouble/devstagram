@@ -14,6 +14,6 @@
 
     </head>
     <body>
-        <h1>Hello Word | Devstagram</h1>
+        <h1>Principal page</h1>
     </body>
 </html>
