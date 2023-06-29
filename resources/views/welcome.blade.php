@@ -13,7 +13,7 @@
         <!-- Styles -->
 
     </head>
-    <body class="antialiased">
+    <body>
         <h1>Hello Word | Devstagram</h1>
     </body>
 </html>
