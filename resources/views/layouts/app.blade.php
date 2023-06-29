@@ -10,5 +10,9 @@
     </head>
 
     <body>
+        <h1 class="text-4xl">
+            @yield('title')
+        </h1>
+    </body>
 
 </html>
