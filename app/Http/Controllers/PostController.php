@@ -8,6 +8,6 @@ class PostController extends Controller
 {
     //
     public function index() {
-        dd('Post website');
+        return view('dashboard');
     }
 }
