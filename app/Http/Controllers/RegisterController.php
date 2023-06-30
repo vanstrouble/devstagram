@@ -18,6 +18,6 @@ class RegisterController extends Controller
             'email' => ['required', 'email','unique:users', 'max:50'],
             'password' => ['required', 'confirmed',],
         ]);
-
+        dd('Creating user...');
     }
 }
