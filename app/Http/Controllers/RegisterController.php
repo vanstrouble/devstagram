@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -18,6 +21,12 @@ class RegisterController extends Controller
             'email' => ['required', 'email','unique:users', 'max:50'],
             'password' => ['required', 'confirmed',],
         ]);
-        dd('Creating user...');
+
+        User::create([
+            'name' => $request->name,
+            'username' => Str::slug($request->username,),
+            'email' => $request->email,
+            'password' => Hash::make( $request->password,),
+        ]);
     }
 }
