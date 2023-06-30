@@ -18,6 +18,9 @@
                     </label>
                     <input type="text" id="name" name="name" placeholder="Introduce tu nombre"
                         class="border p-3 w-full rounded-lg" />
+                    @error('name')
+                        <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El nombre es obligatorio</p>
+                    @enderror
                 </div>
                 <div class=" mb-5">
                     <label for="username" class=" mb-2 block uppercase text-gray-500 font-bold">
