@@ -29,7 +29,16 @@ class RegisterController extends Controller
             'password' => Hash::make( $request->password,),
         ]);
 
-        //
-        return redirect()->route('feed.index');
+        // Authent user
+        // auth()->attempt([
+        //     'email' => $request->email,
+        //     'password' => Hash::make( $request->password,),
+        // ]);
+
+        // Another way to authent user
+        auth()->attempt($request->only('email', 'password'));
+
+        // Return view
+        return redirect()->route('dash.index');
     }
 }
