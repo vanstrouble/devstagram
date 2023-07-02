@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Log in to Devstagram
+Ingresa para disfrutar de Devstagram
 @endsection
 
 @section('content')
@@ -10,13 +10,13 @@
             <img src="{{ asset('img/login.jpg') }}" alt="User login image">
         </div>
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl sm:w-auto">
-            <form action="{{ route('login') }}" method="AHEAD" novalidate>
+            <form action="{{ route('login') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
                         Email
                     </label>
-                    <input type="text" id="email" name="email" placeholder="Enter your email"
+                    <input type="text" id="email" name="email" placeholder="Ingresa tu email"
                         class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror" />
                     @error('email')
                         <div class="bg-red-500 text-white my-2 rounded-lg p-4">
@@ -38,9 +38,9 @@
                 </div>
                 <div class="mb-5">
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Password
+                        Contraseña
                     </label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password"
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña"
                         class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror" />
                     @error('password')
                         <div class="bg-red-500 text-white my-2 rounded-lg p-4">
@@ -63,10 +63,10 @@
                 <div class="mb-5">
                     <input type="checkbox" id="remember" name="remember" class="mr-2">
                     <label for="remember" class="text-gray-500">
-                        Remember me
+                        Recuérdame
                     </label>
                 </div>
-                <input type="submit" value="Log in"
+                <input type="submit" value="Iniciar Sesión"
                     class="bg-blue-500 hover:bg-blue-600 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
             </form>
         </div>
