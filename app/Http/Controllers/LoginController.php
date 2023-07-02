@@ -21,7 +21,8 @@ class LoginController extends Controller
 
         if(!auth()->attempt($request->only('email', 'password')))
         {
-            return back()->with('message', 'Credenciales incorrectas');
+            return back()->with('message', 'Invalid credentials');
         }
+        return redirect()->route('dash.index');
     }
 }
