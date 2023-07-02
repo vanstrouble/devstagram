@@ -77,12 +77,12 @@
                         </div>
                     @enderror
                 </div>
-                <div class="mb-5">
+                {{-- <div class="mb-5">
                     <input type="checkbox" id="remember" name="remember" class="mr-2">
                     <label for="remember" class="text-gray-500">
                         Recuérdame
                     </label>
-                </div>
+                </div> --}}
                 <input type="submit" value="Iniciar Sesión"
                     class="bg-blue-500 hover:bg-blue-600 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
             </form>
