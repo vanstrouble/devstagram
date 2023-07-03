@@ -9,6 +9,8 @@ class LogoutController extends Controller
     //
     public function store()
     {
-        dd('Closing session');
+        // dd('Closing session');
+        auth()->logout();
+        return redirect()->route('login');
     }
 }
