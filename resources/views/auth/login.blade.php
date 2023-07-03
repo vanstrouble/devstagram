@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-    Ingresa para disfrutar de Devstagram
+    {{-- <div class=" p-md-5">
+        <h1 class=" text-center text-bold text-4xl">
+            Ingresa y disfruta de Devstagram
+        </h1>
+    </div> --}}
+    Ingresa y disfruta de Devstagram
 @endsection
 
 @section('content')
