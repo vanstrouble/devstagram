@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Devstagram - @yield('title')</title>
-        @vite('resources/css/app.css')
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    </head>
+    <title>Devstagram - @yield('title')</title>
+    @vite('resources/css/app.css')
 
-    <body class="bg-gray-100">
-        <header class="p-5 border-b bg-white shadow">
-            <div class=" container mx-auto flex justify-between items-center">
-                <h1 class="text-3xl font-black">
-                    <a href="{{ route('principal') }}" class="text-black">Devstagram</a>
-                </h1>
+</head>
 
-                @if (auth()->user())
-                    <p>Autenticado</p>
-                @else
-                    <p>No Autenticado</p>
-                @endif
+<body class="bg-gray-100">
+    <header class="p-5 border-b bg-white shadow">
+        <div class=" container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-black">
+                <a href="{{ route('principal') }}" class="text-black">Devstagram</a>
+            </h1>
 
+            @auth
+                <nav class="flex gap-2 items-center">
+                    <a href="#" class="font-bold uppercase text-gray-600 text-sm mr-6 ml-6">
+                        Hola <span class="font-normal">{{ auth()->user()->username }}</span>
+                    </a>
+                    <a href="#" class="font-bold uppercase text-gray-600 text-sm">Cerrar Sesión</a>
+                </nav>
+            @endauth
+
+
+            @guest
                 <nav class=" flex gap-2 items-center">
                     <a class=" font-bold uppercase text-gray-600 text-sm" href="{{ route('login') }}">Login</a>
                     <a class=" font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear Cuenta</a>
                 </nav>
-            </div>
-        </header>
+            @endguest
+        </div>
+    </header>
 
-        <main class=" container mx-auto mt-10">
-            <h2 class=" font-black text-center text-3xl mb-10">
-                @yield('title')
-            </h2>
-            @yield('content')
-        </main>
+    <main class=" container mx-auto mt-10">
+        <h2 class=" font-black text-center text-3xl mb-10">
+            @yield('title')
+        </h2>
+        @yield('content')
+    </main>
 
-        <footer class="mt-auto fixed bottom-0 left-0 right-0 flex items-center justify-center text-center p-5 text-gray-500 font-bold uppercase text-sm md:justify-self-auto">
-            Devstagram - Todos los derechos reservados {{ now()->year }}
-        </footer>
+    <footer
+        class="mt-auto fixed bottom-0 left-0 right-0 flex items-center justify-center text-center p-5 text-gray-500 font-bold uppercase text-sm md:justify-self-auto">
+        Devstagram - Todos los derechos reservados {{ now()->year }}
+    </footer>
 
-    </body>
+</body>
+
 </html>
