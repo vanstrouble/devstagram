@@ -30,7 +30,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
                         </svg>
-                        Crear
+                        Publicar
                     </a>
                     <a href="{{ route('dash.index', auth()->user()->username) }}"
                         class="font-bold uppercase text-gray-600 text-sm ml-6 mr-3">
