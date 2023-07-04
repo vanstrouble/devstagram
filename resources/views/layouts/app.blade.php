@@ -19,7 +19,7 @@
 
             @auth
                 <nav class="flex gap-2 items-center">
-                    <a href="#" class="font-bold uppercase text-gray-600 text-sm ml-6 mr-3">
+                    <a href="{{ route('dash.index', auth()->user()->username ) }}" class="font-bold uppercase text-gray-600 text-sm ml-6 mr-3">
                         Hola <span class="font-normal">{{ auth()->user()->username }}</span>
                     </a>
                     <form action="{{ route('logout') }}" method="POST">
