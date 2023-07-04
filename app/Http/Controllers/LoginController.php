@@ -25,6 +25,6 @@ class LoginController extends Controller
         {
             return back()->with('message', 'Invalid credentials');
         }
-        return redirect()->route('dash.index');
+        return redirect()->route('dash.index', auth()->user()->username);
     }
 }
