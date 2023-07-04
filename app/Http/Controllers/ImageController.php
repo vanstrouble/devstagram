@@ -7,4 +7,5 @@ use Illuminate\Http\Request;
 class ImageController extends Controller
 {
     //
+    return "Desde ImageController";
 }
