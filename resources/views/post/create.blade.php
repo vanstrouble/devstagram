@@ -7,7 +7,11 @@
 @section('content')
     <div class=" md:flex md:items-center">
         <div class="md:w-1/2 px-10">
-            Horrible image here
+            {{-- Horrible image here --}}
+            <form action="" id="dropzone"
+                class=" dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+
+            </form>
         </div>
 
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
