@@ -13,13 +13,13 @@
 <body class="bg-gray-100">
     <header class="p-5 border-b bg-white shadow">
         <div class=" container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-black">
+            <h1 class="text-3xl font-black mr-6">
                 <a href="{{ route('principal') }}" class="text-black">Devstagram</a>
             </h1>
 
             @auth
                 <nav class="flex gap-2 items-center">
-                    <a href="#" class="font-bold uppercase text-gray-600 text-sm mr-6 ml-6">
+                    <a href="#" class="font-bold uppercase text-gray-600 text-sm ml-6 mr-3">
                         Hola <span class="font-normal">{{ auth()->user()->username }}</span>
                     </a>
                     <form action="{{ route('logout') }}" method="POST">
