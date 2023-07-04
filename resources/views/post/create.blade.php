@@ -14,7 +14,7 @@
             {{-- Horrible image here --}}
             <form action="{{ route('images.store') }}" method="POST" method="multipart/form-data" id="dropzone"
                 class=" dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
-
+                @csrf
             </form>
         </div>
 
@@ -32,7 +32,7 @@
 
                 <div class="mb-4">
                     <label for="description" class="mb-2 block uppercase text-gray-500 font-bold">Descripción</label>
-                    <textarea name="description" id="description" placeholder="Descripción de la obra"
+                    <textarea name="description" id="description" placeholder="Añade una descripción"
                         class="border-gray-300 border p-2 w-full" rows="4"></textarea>
                 </div>
 
