@@ -27,7 +27,7 @@
                         Título de la obra
                     </label>
                     <input type="text" id="title" name="title" placeholder="Introduce el título"
-                        class="border p-3 w-full rounded-lg @error('title') border-red-500 @enderror" />
+                        class="border p-3 w-full rounded-lg" />
                 </div>
 
                 <div class="mb-4">
