@@ -6,28 +6,29 @@
 import Dropzone from "dropzone";
 
 Dropzone.autoDiscover = false;
+if (document.getElementById("dropzone")) {
+    const dropzone = new Dropzone(".dropzone", {
+        dictDefaultMessage: "Sube aquí tu obra",
+        acceptedFiles: ".png,.jpg,.jpeg,.gif",
+        addRemoveLinks: true,
+        dictRemoveFile: "Borrar archivo",
+        maxFiles: 1,
+        uploadMultiple: false,
+    });
 
-const dropzone = new Dropzone("#dropzone", {
-    dictDefaultMessage: "Sube tu obra aquí",
-    acceptedFiles: ".png, .jpg, .jpeg, .heic",
-    addRemoveLinks: true,
-    dictRemoveFile: "Borrar Archivo",
-    maxFile: 1,
-    uploadmultiple: false,
-});
+    dropzone.on("sending", function (file, xhr, formData) {
+        console.log(file);
+    });
 
-dropzone.on('sending', function (file, xhr, formData) {
-    console.log(file);
-});
+    dropzone.on("success", function (file, response) {
+        console.log(response);
+    });
 
-dropzone.on('success', function (file, response) {
-    console.log(response);
-});
+    dropzone.on("error", function (file, message) {
+        console.log(message);
+    });
 
-dropzone.on('error', function (file, message) {
-    console.log(message);
-});
-
-dropzone.on('removedFile', function () {
-    console.log('File deleted');
-});
+    dropzone.on("removedFile", function () {
+        console.log("File deleted");
+    });
+}
