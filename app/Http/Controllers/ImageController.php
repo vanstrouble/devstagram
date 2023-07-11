@@ -11,10 +11,10 @@ class ImageController extends Controller
     //
     public function store(Request $request)
     {
-        $image = $request->file('file');
+        $image = $request->file('image');
         $nameImage = Str::uuid() . "." . $image->extension();
         $imageServer = Image::make($image);
-        $imageServer->fit(1_000, 1_000);
+        $imageServer->fit(1000, 1000);
         $imagePath = public_path('uploads') . '/' . $nameImage;
         $imageServer->save($imagePath);
 

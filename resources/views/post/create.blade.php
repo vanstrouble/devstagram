@@ -12,15 +12,19 @@
     <div class=" md:flex md:items-center">
         <div class="md:w-1/2 px-10">
             {{-- Horrible image here --}}
-            <form action="{{ route('images.store') }}" method="POST" method="multipart/form-data" id="dropzone"
-                class=" dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+            <form
+                action="{{ route('image.store') }}"
+                method="POST"
+                enctype="multipart/form-data"
+                id="dropzone"
+                class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
                 @csrf
             </form>
         </div>
 
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
             {{-- <h2 class="text-2xl font-semibold mb-4 text-center">Crea un nuevo post</h2> --}}
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('image.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <label for="title" class=" mb-2 block uppercase text-gray-500 font-bold">
