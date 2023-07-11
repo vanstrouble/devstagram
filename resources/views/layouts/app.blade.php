@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @stack('styles')
 
-    <title>Devstagram - @yield('title')</title>
+    <title>Gallerygram - @yield('title')</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 
@@ -16,7 +16,7 @@
     <header class="p-5 border-b bg-white shadow">
         <div class=" container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black mr-6">
-                <a href="{{ route('principal') }}" class="text-black">Devstagram</a>
+                <a href="{{ route('principal') }}" class="text-black">Gallerygram</a>
             </h1>
 
             @auth
