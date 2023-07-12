@@ -73,7 +73,7 @@
                 </div>
 
                 <div class=" mb-5">
-                    <input type="hidden" name="image">
+                    <input type="hidden" name="image" value="{{ old('image') }}">
                     @error('image')
                         <div class="bg-red-500 text-white my-2 rounded-lg p-4">
                             <div class="flex items-center">
