@@ -17,7 +17,7 @@ if (document.getElementById("dropzone")) {
     });
 
     dropzone.on("sending", function (file, xhr, formData) {
-        console.log(file);
+        console.log(formData);
     });
 
     dropzone.on("success", function (file, response) {
@@ -28,7 +28,7 @@ if (document.getElementById("dropzone")) {
         console.log(message);
     });
 
-    dropzone.on("removedFile", function () {
-        console.log("File deleted");
+    dropzone.on("removedfile", function () {
+        // console.log("File deleted");
     });
 }
