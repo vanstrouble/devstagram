@@ -62,9 +62,10 @@
         @yield('content')
     </main>
 
+    {{-- TODO: Make static the footer --}}
     <footer
         class="mt-auto fixed bottom-0 left-0 right-0 flex items-center justify-center text-center p-5 text-gray-500 font-bold uppercase text-sm md:justify-self-auto">
-        Devstagram - Todos los derechos reservados {{ now()->year }}
+        Gallerygram - Todos los derechos reservados {{ now()->year }}
     </footer>
 
 </body>
