@@ -16,17 +16,18 @@ if (document.getElementById("dropzone")) {
         uploadMultiple: false,
     });
 
-    dropzone.on("sending", function (file, xhr, formData) {
-        console.log(formData);
-    });
+    // dropzone.on("sending", function (file, xhr, formData) {
+    //     console.log(formData);
+    // });
 
     dropzone.on("success", function (file, response) {
-        console.log(response);
+        // console.log(response.image); // Testing upload images successfully
+        document.querySelector('[name="image"]').value = response.image;
     });
 
-    dropzone.on("error", function (file, message) {
-        console.log(message);
-    });
+    // dropzone.on("error", function (file, message) {
+    //     console.log(message);
+    // });
 
     dropzone.on("removedfile", function () {
         // console.log("File deleted");
