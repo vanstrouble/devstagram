@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @stack('styles')
 
     <title>Gallerygram - @yield('title')</title>
+    @stack('styles')
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 
