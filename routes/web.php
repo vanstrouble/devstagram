@@ -29,11 +29,11 @@ Route::post('/register', [RegisterController::class,'store'])->name('register');
 
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'store'])->name('login');
-
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/{user:username}', [PostController::class,'index'])->name('dash.index');
 
 Route::get('/post/create', [PostController::class, 'create'])->name('dash.create');
+Route::post('/posts', [PostController::class, 'store'])->name('post.store');
 
 Route::post('/images', [ImageController::class, 'store'])->name('image.store');
