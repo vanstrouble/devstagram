@@ -6,7 +6,7 @@
             Ingresa y disfruta de Devstagram
         </h1>
     </div> --}}
-    Ingresa y disfruta de Devstagram
+    Ingresa y disfruta de Gallerygram
 @endsection
 
 @section('content')
