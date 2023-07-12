@@ -20,8 +20,8 @@ class PostFactory extends Factory
             //
             'title' => $this->faker->sentence(5),
             'description' => $this->faker->sentence(20),
-            'image' => $this->faker->uuid() . 'jpg',
-            'user_id' => $this->faker->randomElement([1, 2, 3, 4, 5])
+            'image' => $this->faker->uuid() . '.jpg',
+            'user_id' => $this->faker->randomElement([1, 2, 3])
         ];
     }
 }
