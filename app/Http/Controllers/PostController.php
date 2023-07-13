@@ -27,14 +27,29 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        // dd('Creando publicacion');
+        // dd('Creating post...');
         $this->validate($request, [
-            'title' => ['required','max:255'],
-            'description' => ['required','max:2200'],
+            'title' => ['required', 'max:255'],
+            'description' => ['required', 'max:2200'],
             'image' => ['required'],
         ]);
 
-        Post::create([
+        // Post::create([
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        //     'image' => $request->image,
+        //     'user_id' => auth()->user()->id
+        // ]);
+
+        // Another way to create a post
+        // $post = new Post();
+        // $post->title = $request->title;
+        // $post->description = $request->description;
+        // $post->image = $request->image;
+        // $post->user_id = auth()->user()->id;
+        // $post->save();
+
+        $request->user()->posts()->create([
             'title' => $request->title,
             'description' => $request->description,
             'image' => $request->image,
