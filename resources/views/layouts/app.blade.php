@@ -12,9 +12,9 @@
 
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex flex-col min-h-screen">
     <header class="p-5 border-b bg-white shadow">
-        <div class=" container mx-auto flex justify-between items-center">
+        <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black mr-6">
                 <a href="{{ route('principal') }}" class="text-black">Gallerygram</a>
             </h1>
@@ -22,7 +22,7 @@
             @auth
                 <nav class="flex gap-2 items-center">
                     <a href="{{ route('dash.create') }}"
-                        class=" flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
+                        class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -45,26 +45,23 @@
                 </nav>
             @endauth
 
-
             @guest
-                <nav class=" flex gap-2 items-center">
-                    <a class=" font-bold uppercase text-gray-600 text-sm" href="{{ route('login') }}">Login</a>
-                    <a class=" font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear Cuenta</a>
+                <nav class="flex gap-2 items-center">
+                    <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('login') }}">Login</a>
+                    <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear Cuenta</a>
                 </nav>
             @endguest
         </div>
     </header>
 
-    <main class=" container mx-auto mt-10">
-        <h2 class=" font-black text-center text-3xl mb-10">
+    <main class="container mx-auto mt-10 flex-grow">
+        <h2 class="font-black text-center text-3xl mb-10">
             @yield('title')
         </h2>
         @yield('content')
     </main>
 
-    {{-- TODO: Make static the footer --}}
-    <footer
-        class="mt-auto fixed bottom-0 left-0 right-0 flex items-center justify-center text-center p-5 text-gray-500 font-bold uppercase text-sm md:justify-self-auto">
+    <footer class="mt-auto bg-gray-100 text-gray-500 text-center p-5 text-sm font-bold uppercase">
         Gallerygram - Todos los derechos reservados {{ now()->year }}
     </footer>
 
