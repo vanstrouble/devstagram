@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class=" container mx-auto flex">
+    <div class=" container mx-auto md:flex">
         <div class=" md:w-1/2">
             {{-- All data about image --}}
             <img src="{{ asset('uploads') . '/' . $post->image }}" alt="Post Image {{ $post->title }}">
@@ -25,7 +25,7 @@
                 @auth()
                     <p class="text-xl font-bold text-center mb-4 container mx-auto md:flex">¿Qué te hace sentir esta obra?</p>
 
-                    <form action="">
+                    <form action="{{ route('comments.store', ['post' => $post, 'user' => $user]) }}" method="POST">
                         <div class="mb-4">
                             <textarea name="comment" id="description" placeholder="Agrega un nuevo comentario"
                                 class="border p-2 w-full bg-gray-100 rounded-lg" rows="4"></textarea>
