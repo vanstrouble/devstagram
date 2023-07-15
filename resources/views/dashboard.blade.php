@@ -44,6 +44,9 @@
                     </div>
                 @endforeach
             </div>
+            <div class="flex items-center justify-center mt-5">
+                {{ $posts->links() }}
+            </div>
         @else
             <p class="text-center text-gray-500 text-lg font-bold py-5">
                 <span class="block">There's nothing to show</span>
