@@ -39,6 +39,7 @@ class RegisterController extends Controller
         auth()->attempt($request->only('email', 'password'));
 
         // Return view
-        return redirect()->route('dash.index');
+        // return redirect()->route('dash.index');
+        return redirect()->route('dash.index', ['user' => auth()->user()->username]);
     }
 }
