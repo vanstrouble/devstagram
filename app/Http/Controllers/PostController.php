@@ -61,4 +61,11 @@ class PostController extends Controller
 
         return redirect()->route('dash.index', auth()->user()->username);
     }
+
+    public function show(Post $post)
+    {
+        return view('post.show', [
+            'post' => $post,
+        ]);
+    }
 }
