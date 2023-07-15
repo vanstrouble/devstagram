@@ -7,7 +7,7 @@
 @section('content')
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 md:flex">
-            <div class=" md:w-10/12 lg:w-4/12 px-5 flex justify-center">
+            <div class=" md:w-10/12 lg:w-4/12 px-5 md:p-1 flex justify-center">
                 <img src="{{ asset('img/usuario.svg') }}" alt="user image" class="mx-auto w-1/2 lg:w-full py-2">
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5 md:flex md:flex-col md:justify-center">
@@ -38,7 +38,7 @@
             <div class=" grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 @foreach ($posts as $post)
                     <div>
-                        <a href="{{ route('posts.show', $post) }}">
+                        <a href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
                             <img src="{{ asset('uploads') . '/' . $post->image }}" alt="Post Image {{ $post->title }}">
                         </a>
                     </div>
