@@ -24,6 +24,13 @@
             <div class="comment-box shadow bg-white p-5 mb-5">
                 @auth()
                     <p class="text-xl font-bold text-center mb-4 container mx-auto md:flex">¿Qué te hace sentir esta obra?</p>
+
+                    @if (session('message'))
+                        <div class=" bg-green-500 p-2 rounded-lg mb-6 text-white text-center uppercase font-bold">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+
                     <form action="{{ route('comments.store', ['post' => $post, 'user' => $user]) }}" method="POST">
                         @csrf
                         <div class="mb-4">
