@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
     //
-    public function store()
+    public function store(Request $request)
     {
-        dd('commenting...');
+        // dd('commenting...');
+        $this->validate($request, [
+            'comment' => ['required', 'max:255'],
+        ]);
     }
 }
