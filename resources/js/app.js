@@ -9,7 +9,7 @@ Dropzone.autoDiscover = false;
 if (document.getElementById("dropzone")) {
     const dropzone = new Dropzone(".dropzone", {
         dictDefaultMessage: "Sube aquí tu obra",
-        acceptedFiles: ".png,.jpg,.jpeg,.gif",
+        acceptedFiles: ".png,.jpg,.jpeg,.gif,.avif",
         addRemoveLinks: true,
         dictRemoveFile: "Borrar archivo",
         maxFiles: 1,
