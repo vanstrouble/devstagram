@@ -17,6 +17,16 @@
                 <p class=" text-sm text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
                 <p class=" mt-5">{{ $post->description }}</p>
             </div>
+            @auth()
+                @if ($post->user_id === auth()->user()->id)
+                    <form action="{{ route('posts.destroy', $post->user) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <input type="submit" value="Destruir obra"
+                            class=" bg-red-600 hover:bg-red-700 p-2 rounded text-white font-bold mt-4 cursor-pointer duration-200 transition-all">
+                    </form>
+                @endauth
+            @endif
         </div>
 
         <div class="md:w-1/2 p-5">
@@ -64,7 +74,8 @@
                     @if ($post->comments->count() > 0)
                         @foreach ($post->comments as $comment)
                             <div class=" p-5 border-gray-300 border-b">
-                                <a href="{{ route('dash.index', $comment->user) }}" class=" font-bold">{{ $comment->user->username }}</a>
+                                <a href="{{ route('dash.index', $comment->user) }}"
+                                    class=" font-bold">{{ $comment->user->username }}</a>
                                 <p>{{ $comment->comment }}</p>
                                 <p class=" text-sm text-gray-500">{{ $comment->created_at->diffForHumans() }}</p>
                             </div>
