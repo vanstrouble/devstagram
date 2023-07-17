@@ -70,8 +70,21 @@ class PostController extends Controller
         ]);
     }
 
+    public function authorize($ability, $arguments = [])
+    {
+        return true;
+    }
+
     public function destroy(Post $post)
     {
-        dd('eliminando...');
+        $this->authorize('delete', $post);
+        $post->delete();
+        return redirect()->route('dash.index', auth()->user()->username);
+
+        // if ($post->user_id === auth()->user()->id) {
+        //     dd('Es la misma persona');
+        // } else {
+        //     dd('No es la misma persona');
+        // }
     }
 }

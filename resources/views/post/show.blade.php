@@ -7,7 +7,7 @@
 @section('content')
     <div class=" container mx-auto md:flex">
         <div class=" md:w-1/2">
-            {{-- All data about image --}}
+            {{-- All data about post --}}
             <img src="{{ asset('uploads') . '/' . $post->image }}" alt="Post Image {{ $post->title }}">
             <div class=" p-3">
                 <p>0 Likes</p>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="md:w-1/2 p-5">
-            {{-- Comments --}}
+            {{-- Comments form --}}
             <div class="comment-box shadow bg-white p-5 mb-5">
                 <p class="text-xl font-bold text-center mb-4 container mx-auto md:flex">¿Qué te hace sentir esta obra?</p>
                 @auth()
@@ -69,7 +69,7 @@
                         </div>
                     </form>
                 @endauth
-                {{-- Comments section --}}
+                {{-- Comments view section --}}
                 <div class=" bg-white shadow mb-5 max-h-96 overflow-y-scroll mt-10">
                     @if ($post->comments->count() > 0)
                         @foreach ($post->comments as $comment)
