@@ -19,14 +19,14 @@
             </div>
             @auth()
                 @if ($post->user_id === auth()->user()->id)
-                    <form action="{{ route('posts.destroy', $post->user) }}" method="POST">
+                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
                         @method('DELETE')
                         @csrf
                         <input type="submit" value="Destruir obra"
                             class=" bg-red-600 hover:bg-red-700 p-2 rounded text-white font-bold mt-4 cursor-pointer duration-200 transition-all">
                     </form>
-                @endauth
-            @endif
+                @endif
+            @endauth
         </div>
 
         <div class="md:w-1/2 p-5">

@@ -71,21 +71,15 @@ class PostController extends Controller
         ]);
     }
 
-    public function authorize($ability, $arguments = [])
-    {
-        return true;
-    }
+    // public function authorize($ability, $arguments = [])
+    // {
+    //     return true;
+    // }
 
     public function destroy(Post $post)
     {
         $this->authorize('delete', $post);
         $post->delete();
-
-        // chmod(public_path('uploads'), 0777);
-        $path_image = public_path('uploads/' . $post->image);
-        if (File::exists($path_image)) {
-            unlink($path_image);
-        }
 
         return redirect()->route('dash.index', auth()->user()->username);
     }
