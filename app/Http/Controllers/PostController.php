@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -79,12 +80,13 @@ class PostController extends Controller
     {
         $this->authorize('delete', $post);
         $post->delete();
-        return redirect()->route('dash.index', auth()->user()->username);
 
-        // if ($post->user_id === auth()->user()->id) {
-        //     dd('Es la misma persona');
-        // } else {
-        //     dd('No es la misma persona');
-        // }
+        // chmod(public_path('uploads'), 0777);
+        $path_image = public_path('uploads/' . $post->image);
+        if (File::exists($path_image)) {
+            unlink($path_image);
+        }
+
+        return redirect()->route('dash.index', auth()->user()->username);
     }
 }
