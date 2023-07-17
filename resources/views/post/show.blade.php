@@ -22,9 +22,8 @@
         <div class="md:w-1/2 p-5">
             {{-- Comments --}}
             <div class="comment-box shadow bg-white p-5 mb-5">
+                <p class="text-xl font-bold text-center mb-4 container mx-auto md:flex">¿Qué te hace sentir esta obra?</p>
                 @auth()
-                    <p class="text-xl font-bold text-center mb-4 container mx-auto md:flex">¿Qué te hace sentir esta obra?</p>
-
                     @if (session('message'))
                         <div class=" bg-green-500 p-2 rounded-lg mb-6 text-white text-center uppercase font-bold">
                             {{ session('message') }}
@@ -60,6 +59,20 @@
                         </div>
                     </form>
                 @endauth
+                {{-- Comments section --}}
+                <div class=" bg-white shadow mb-5 max-h-96 overflow-y-scroll mt-10">
+                    @if ($post->comments->count() > 0)
+                        @foreach ($post->comments as $comment)
+                            <div class=" p-5 border-gray-300 border-b">
+                                <a href="{{ route('dash.index', $comment->user) }}" class=" font-bold">{{ $comment->user->username }}</a>
+                                <p>{{ $comment->comment }}</p>
+                                <p class=" text-sm text-gray-500">{{ $comment->created_at->diffForHumans() }}</p>
+                            </div>
+                        @endforeach
+                    @else
+                        <p class=" p-10 text-center">Aún no hay comentarios</p>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
