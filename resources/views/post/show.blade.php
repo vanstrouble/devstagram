@@ -40,7 +40,10 @@
                         </form>
                     @endif
                 @endauth
-                <p>0 Likes</p>
+                <p class=" font-bold">
+                    {{ $post->likes->count() }}
+                    <span>Likes</span>
+                </p>
             </div>
             <div>
                 <p class=" font-bold">{{ $post->user->username }}</p>
