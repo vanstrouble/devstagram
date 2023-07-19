@@ -44,11 +44,13 @@
     </div>
 
     <section class="container mx-auto mt-10">
-        <h2 class="text-4xl text-center font-black my-10">
-            Shitposting
-        </h2>
+        <div class="text-center my-6">
+            <hr class="border-t-2 border-gray-300">
+            <h2 class="text-4xl font-bold text-gray-800 mt-4 mb-6">Welcome to MyGram</h2>
+            <hr class="border-t-2 border-gray-300">
+        </div>
         @if ($posts->count() > 0)
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
                 @foreach ($posts as $post)
                     <div>
                         <a href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
