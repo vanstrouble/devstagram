@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\LikeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -46,3 +47,6 @@ Route::post('/images', [ImageController::class, 'store'])->name('image.store');
 
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
+
+Route::get('{user:username}/edit-profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::post('{user:username}/edit-profile', [ProfileController::class, 'store'])->name('profile.store');
