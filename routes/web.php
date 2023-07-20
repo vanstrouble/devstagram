@@ -50,3 +50,6 @@ Route::post('/images', [ImageController::class, 'store'])->name('image.store');
 
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
+
+Route::get('/edit-profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::post('/edit-profile', [ProfileController::class, 'store'])->name('profile.store');
