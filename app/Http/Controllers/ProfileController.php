@@ -14,6 +14,6 @@ class ProfileController extends Controller
     public function index()
     {
         // dd('This is the profile');
-        return view('conf.index');
+        return view('settings.index');
     }
 }
