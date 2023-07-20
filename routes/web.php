@@ -28,14 +28,14 @@ Route::get('/', function () {
 Route::view('/', 'principal')->name('principal');
 
 Route::get('/sign', [RegisterController::class,'index'])->name('sign');
-Route::post('/sign', [RegisterController::class,'store'])->name('sign');
+Route::post('/sign', [RegisterController::class,'store']);
+
+Route::get('/edit-profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::post('/edit-profile', [ProfileController::class, 'store'])->name('profile.store');
 
 Route::get('/login', [LoginController::class,'index'])->name('login');
-Route::post('/login', [LoginController::class,'store'])->name('login');
+Route::post('/login', [LoginController::class,'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-
-Route::get('{user:username}/edit-profile', [ProfileController::class, 'index'])->name('profile.index');
-Route::post('{user:username}/edit-profile', [ProfileController::class, 'store'])->name('profile.store');
 
 Route::get('/{user:username}', [PostController::class,'index'])->name('dash.index');
 Route::get('/post/create', [PostController::class, 'create'])->name('dash.create');
@@ -50,6 +50,3 @@ Route::post('/images', [ImageController::class, 'store'])->name('image.store');
 
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes.store');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
-
-Route::get('{user:username}/edit-profile', [ProfileController::class, 'index'])->name('profile.index');
-Route::post('{user:username}/edit-profile', [ProfileController::class, 'store'])->name('profile.store');
