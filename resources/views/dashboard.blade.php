@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title')
+{{-- @section('title') --}}
     {{-- This is your account --}}
-@endsection
+{{-- @endsection --}}
 
 @section('content')
     <div class="flex justify-center">
