@@ -44,7 +44,7 @@ class ProfileController extends Controller
         // Save changes
         $user = User::find(auth()->user()->id);
         $user->username = $request->username;
-        $user->image = $imageName ?? '';
+        $user->image = $imageName ?? auth()->user()->image ?? null;
         $user->save();
 
         // Redirect to user view

@@ -1,21 +1,23 @@
 @extends('layouts.app')
 
 {{-- @section('title') --}}
-    {{-- This is your account --}}
+{{-- This is your account --}}
 {{-- @endsection --}}
 
 @section('content')
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 md:flex">
             <div class="md:w-4/12 px-5 md:p-1 flex justify-center">
-                <img src="{{ asset('img/usuario.svg') }}" alt="user image" class="mx-auto w-1/2 lg:w-full py-2">
+                <img src="{{ $user->image ? asset('profiles') . '/' . $user->image : asset('img/usuario.svg') }}"
+                    alt="user image" class="mx-auto w-1/2 lg:w-full py-2 rounded-full">
             </div>
             <div class="md:w-8/12 px-5 md:flex md:flex-col md:justify-center">
                 <div class="flex items-center justify-center md:justify-start md:gap-2">
                     <p class="text-gray-700 text-2xl text-center md:text-left">{{ $user->username }}</p>
                     @auth()
                         @if ($user->id === auth()->user()->id)
-                            <a href="{{ route('profile.index', $user) }}" class="text-gray-500 hover:text-gray-600 cursor-pointer p-2">
+                            <a href="{{ route('profile.index', $user) }}"
+                                class="text-gray-500 hover:text-gray-600 cursor-pointer p-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                     stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
