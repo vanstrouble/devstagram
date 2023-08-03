@@ -1,4 +1,4 @@
-# Devstagram | Digital Art Museum
+# Gallerygram | Digital Art Museum
 Welcome to Gallerygram, the digital art museum where you can showcase your masterpieces to the world and share the inspiration behind each piece! Gallerygram is a basic clone of VSCO and Instagram, but with an exclusive focus on artwork and creative expression.
 ## Outstanding features:
 **Create your profile and access safely:**
