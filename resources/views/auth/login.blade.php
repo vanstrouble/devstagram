@@ -12,7 +12,7 @@
 @section('content')
     <div class="md:flex md:justify-center mx-auto w-full items-center md:gap-10">
         <div class="md:w-6/12 p-5">
-            <img src="{{ asset('img/login.jpg') }}" alt="User login image">
+            <img src="{{ asset('img/art1.jpg') }}" alt="User login image">
         </div>
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl sm:w-auto">
             <form action="{{ route('login') }}" method="POST" novalidate>
