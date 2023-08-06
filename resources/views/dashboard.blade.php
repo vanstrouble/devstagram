@@ -45,17 +45,20 @@
                     @endauth
                 </div>
                 <div class="flex justify-center md:justify-start">
+                    {{-- Follwers number --}}
                     <p class="text-gray-800 text-sm mb-3 font-bold mr-6">
-                        0
-                        <span class="font-normal">Seguidores</span>
+                        {{ $user->followers->count() }}
+                        <span class="font-normal">@choice('Seguidor|Seguidores', $user->followers->count())</span>
                     </p>
+                    {{-- Following number --}}
                     <p class="text-gray-800 text-sm mb-3 font-bold mr-6">
-                        0
+                        {{ $user->followings->count() }}
                         <span class="font-normal">Siguiendo</span>
                     </p>
+                    {{-- Posts number --}}
                     <p class="text-gray-800 text-sm mb-3 font-bold">
                         {{ $user->posts->count() }}
-                        <span class="font-normal">Posts</span>
+                        <span class="font-normal">@choice('Post|Posts', $user->posts->count())</span>
                     </p>
                 </div>
             </div>
