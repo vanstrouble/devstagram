@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 
@@ -22,11 +23,7 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
-});
-
-Route::view('/', 'principal')->name('principal');
+Route::get('/', [HomeController::class])->name('home');
 
 Route::get('/sign', [RegisterController::class,'index'])->name('sign');
 Route::post('/sign', [RegisterController::class,'store']);
