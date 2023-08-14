@@ -24,7 +24,10 @@
                 </div>
             </div>
         @empty
-            <p class="text-center">There's nothing to show</p>
+        <p class="text-center text-gray-500 text-lg font-bold py-5">
+            <span class="block">There's nothing to show</span>
+            <span class="block mt-2">😞</span>
+        </p>
         @endforelse
     </div>
     <div class="flex items-center justify-center mt-5">
