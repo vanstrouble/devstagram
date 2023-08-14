@@ -9,7 +9,7 @@
     @stack('styles')
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-
+    @livewireStyles
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
@@ -64,7 +64,7 @@
     <footer class="mt-auto bg-gray-100 text-gray-500 text-center p-5 text-sm font-bold uppercase">
         Gallerygram - Todos los derechos reservados {{ now()->year }}
     </footer>
-
+    @livewireScripts
 </body>
 
 </html>
