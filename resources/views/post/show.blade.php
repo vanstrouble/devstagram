@@ -49,7 +49,7 @@
                 <a href="{{ route('dash.index', ['user' => $post->user]) }}"
                     class="font-bold hover:underline">{{ $post->user->username }}</a>
                 <p class=" text-sm text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
-                <p class=" mt-5">{{ $post->description }}</p>
+                <p class=" mt-5 text-justify">{{ $post->description }}</p>
             </div>
             @auth()
                 @if ($post->user_id === auth()->user()->id)
