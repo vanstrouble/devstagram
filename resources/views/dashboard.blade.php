@@ -71,24 +71,6 @@
             <h2 class="text-4xl font-bold text-gray-800 mt-4 mb-6">Welcome to MyGram</h2>
             <hr class="border-t-2 border-gray-300">
         </div>
-        @if ($posts->count() > 0)
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-                @foreach ($posts as $post)
-                    <div>
-                        <a href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
-                            <img src="{{ asset('uploads') . '/' . $post->image }}" alt="Post Image {{ $post->title }}">
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-            <div class="flex items-center justify-center mt-5">
-                {{ $posts->links() }}
-            </div>
-        @else
-            <p class="text-center text-gray-500 text-lg font-bold py-5">
-                <span class="block">There's nothing to show</span>
-                <span class="block mt-2">😞</span>
-            </p>
-        @endif
+        <x-list-post :posts="$posts" />
     </section>
 @endsection
