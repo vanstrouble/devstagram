@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        dd('Testing home view');
-        // return view('home');
+        // dd('Testing home view');
+        return view('home');
     }
 }

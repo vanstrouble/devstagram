@@ -23,7 +23,7 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', [HomeController::class])->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('/sign', [RegisterController::class,'index'])->name('sign');
 Route::post('/sign', [RegisterController::class,'store']);
