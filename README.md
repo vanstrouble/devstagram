@@ -23,6 +23,11 @@ Express yourself and show your support for other artists by liking their posts. 
 
 ![Post](img/post.png)
 
+**Home view to check the posts you like:**
+Check out the posts you like on your home screen with a simple museum wall-style display. Highlight posts on hover.
+
+![Home](img/home_view.png)
+
 ---
 ### Used tools
 **[Laravel (PHP):](https://laravel.com)**
