@@ -9,6 +9,11 @@ class LoginController extends Controller
     //
     public function index()
     {
+        if (auth()->user()) {
+            return redirect()->route('home', [
+                'posts' => auth()->user()->posts
+            ]);
+        }
         return view('auth.login');
     }
 
