@@ -19,10 +19,12 @@
                 </div>
             </div>
         @empty
-            <p class="text-center text-gray-500 text-lg font-bold py-5">
-                <span class="block">There's nothing to show</span>
-                <span class="block mt-2">😞</span>
-            </p>
+            <div class="flex justify-center md:justify-center items-center h-full">
+                <p class="text-center text-gray-500 text-lg font-bold">
+                    <span class="block">Oops, it's empty here!</span>
+                    <span class="block mt-2 text-2xl">🙁</span>
+                </p>
+            </div>
         @endforelse
     </div>
     <div class="flex items-center justify-center mt-5">
